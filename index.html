@@ -63,46 +63,48 @@
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
                 <div class="two" id='rawnerf_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/candle_crop_vid_fasterpull_240.mp4" type="video/mp4">
+                <source src="img/video-teaser_crop.mp4" type="video/mp4">
                 Your browser does not support the video tag.
                 </video></div>
-                <img src='img/candle_image0_patch_darker.png' width="160">
+                <img src='img/teaser.png' width="160">
               </div>
               <script type="text/javascript">
                 function rawnerf_start() {
-                  document.getElementById('rawnerf_image').style.opacity = "1";
+                  document.getElementById('hanerf_image').style.opacity = "1";
                 }
 
                 function rawnerf_stop() {
-                  document.getElementById('rawnerf_image').style.opacity = "0";
+                  document.getElementById('hanerf_image').style.opacity = "0";
                 }
                 rawnerf_stop()
               </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <a href="rawnerf/index.html">
-                <papertitle>NeRF in the Dark: High Dynamic Range View Synthesis from Noisy Raw Images</papertitle>
+                <papertitle>Ha-NeRF&#x1F606: Hallucinated Neural Radiance Fields in the Wild</papertitle>
               </a>
               <br>
-              <strong>Ben Mildenhall</strong>,
-              <a href="https://phogzone.com/">Peter Hedman</a>,
-              <a href="http://www.ricardomartinbrualla.com/">Ricardo Martin-Brualla</a>,
-              <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-              <a href="https://jonbarron.info/">Jonathan Barron</a>
+              <strong>Xingyu Chen</strong>,
+              <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
+              <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
+              <a href="https://github.com/fanegg/">Yue Chen</a>,
+              <a href="https://rover-xingyu.github.io/">Ying Feng</a>,
+              <a href="https://scholar.google.com/citations?user=h-3xd3EAAAAJ&hl=en">Xuan Wang</a>,
+              <a href="https://juewang725.github.io/">Jue Wang</a>
               <br>
-        <em>Computer Vision and Pattern Recognition (CVPR)</em>, 2022   <font color="red"><strong>(oral)</strong></font>
+        <em>Computer Vision and Pattern Recognition (CVPR)</em>, 2022
               <br>
-              <a href="rawnerf/index.html">project page</a>
+              <a href="https://rover-xingyu.github.io/Ha-NeRF/">project page</a>
         /
-              <a href="https://arxiv.org/abs/2111.13679">arXiv</a>
+              <a href="https://arxiv.org/pdf/2111.15246.pdf">arXiv</a>
         /
-              <a href="https://www.youtube.com/watch?v=JtBS4KBcKVc">video</a>
+<!--               <a href="https://www.youtube.com/watch?v=JtBS4KBcKVc">video</a> -->
               <p></p>
-              <p>We train RawNeRF directly on linear raw camera images, enabling new HDR view synthesis applications and greatly increasing robustness to camera noise.</p>
+              <p>We recover hallucinated neural radiance fields (Ha-NeRF) from a group of tourism images with variable appearance and complex occlusions. Our method can consistently render free-occlusion views which hallucinate different appearances.</p>
             </td>
           </tr> 
 
-          <tr onmouseout="mip360_stop()" onmouseover="mip360_start()">
+<!--           <tr onmouseout="mip360_stop()" onmouseover="mip360_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
                 <div class="two" id='mip360_image'><video  width=100% height=100% muted autoplay loop>
@@ -1182,7 +1184,7 @@
         </p>
         </td>
       </tr>
-      </tbody></table>
+      </tbody></table> -->
 
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
       <tr>
