@@ -108,6 +108,51 @@
             </td>
           </tr> 
 
+
+          
+          <tr onmouseout="rds_stop()" onmouseover="rds_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='rds_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="img/rds-slam_cccc.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='img/rds-slam2.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function rds_start() {
+                  document.getElementById('hanerf_image').style.opacity = "1";
+                }
+
+                function rds_stop() {
+                  document.getElementById('hanerf_image').style.opacity = "0";
+                }
+                rawnerf_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://rover-xingyu.github.io/">
+                <papertitle>Using Detection, Tracking and Prediction in Visual SLAM to Achieve Real-time Semantic Mapping of Dynamic Scenarios</papertitle>
+              </a>
+              <br>
+              <strong>Xingyu Chen</strong>,
+              <a href="https://qzhang-cv.github.io/">Jianru Xue</a>,
+              <a href="https://xiaoyu258.github.io/">Jianwu Fang</a>,
+              <a href="https://github.com/fanegg/">Yue Chen</a>,
+              <a href="https://rover-xingyu.github.io/">Yuxin Pan</a>,
+              <a href="https://scholar.google.com/citations?user=h-3xd3EAAAAJ&hl=en">Nanning Zheng</a>
+              <br>
+        <em>Intelligent Vehicles Symposium (IV)</em>, 2020
+              <br>
+              <a href="https://rover-xingyu.github.io/">project page</a>
+        /
+              <a href="https://www.researchgate.net/profile/Jianwu-Fang/publication/348368507_Using_Detection_Tracking_and_Prediction_in_Visual_SLAM_to_Achieve_Real-time_Semantic_Mapping_of_Dynamic_Scenarios/links/60097793a6fdccdcb86c3c78/Using-Detection-Tracking-and-Prediction-in-Visual-SLAM-to-Achieve-Real-time-Semantic-Mapping-of-Dynamic-Scenarios.pdf">paper</a>
+              <p></p>
+              <p>Instead of detecting objects in all frames, we detect only keyframes to get the movable objects and use a low-cost prediction in other frames to predict where the movable objects are to reduce the computational cost.</p>
+            </td>
+          </tr>           
+          
+          
 <!--           <tr onmouseout="mip360_stop()" onmouseover="mip360_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
