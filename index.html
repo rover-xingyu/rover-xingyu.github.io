@@ -140,8 +140,225 @@
               <p></p>
               <p>Instead of detecting objects in all frames, we detect only keyframes to get the movable objects and use a low-cost prediction in other frames to predict where the movable objects are to reduce the computational cost.</p>
             </td>
-          </tr>
+          </tr>     
 
+<!-- NCM -->
+          <tr onmouseout="NCM_stop()" onmouseover="NCM_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='NCM_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="img/ICRA2020_web_c.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='img/ICRA2020_overview.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function NCM_start() {
+                  document.getElementById('NCM_image').style.opacity = "1";
+                }
+
+                function NCM_stop() {
+                  document.getElementById('NCM_image').style.opacity = "0";
+                }
+                NCM_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://rover-xingyu.github.io/">
+                <papertitle>Navigation Command Matching for Vision-based Autonomous Driving</papertitle>
+              </a>
+              <br>
+              <a href="https://rover-xingyu.github.io/">Yuxin Pan</a>,
+              <a href="https://gr.xjtu.edu.cn/en/web/jrxue">Jianru Xue</a>,
+              <a href="https://scholar.google.no/citations?user=n4v0ev8AAAAJ&hl=no">Pengfei Zhang</a>,
+              <a href="https://wlouyang.github.io/">Wanli Ouyang</a>,
+              <a href="http://www.lotvs.net/JianwuFang/">Jianwu Fang</a>,
+              <strong>Xingyu Chen</strong>
+              <br>
+              <em>International Conference on Robotics and Automation (ICRA)</em>, 2020
+              <br>
+              <a href="https://rover-xingyu.github.io/">project page</a> /
+              <a href="https://www.researchgate.net/profile/Pan-Yuxin/publication/340082526_Navigation_Command_Matching_for_Vision-based_Autonomous_Driving/links/600a288192851c13fe2a8d5a/Navigation-Command-Matching-for-Vision-based-Autonomous-Driving.pdf">paper</a>
+              <p></p>
+              <p>Smooth rewards are crucial to discriminate actions generated from sub-optimal policy, we propose a navigation command matching (NCM) model to address this issue.</p>
+            </td>
+          </tr>   
+
+
+<!-- project -->          
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <heading>Projects</heading>
+          </td>
+        </tr>
+      </tbody></table>
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+<!-- kuafu -->
+        <tr onmouseout="kuafu_stop()" onmouseover="kuafu_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id='kuafu_image'><video  width=100% height=100% muted autoplay loop>
+              <source src="img/kuafu.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div>
+              <img src='img/kuafu.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function kuafu_start() {
+                document.getElementById('kuafu_image').style.opacity = "1";
+              }
+
+              function kuafu_stop() {
+                document.getElementById('kuafu_image').style.opacity = "0";
+              }
+              kuafu_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://gr.xjtu.edu.cn/en/web/jrxue/home">
+              <papertitle>Kuafu (Autonomous Vehicle)</papertitle>
+            </a>
+            <br>
+            <strong>IEEE Intelligent Transportation Systems Institute Lead Award</strong>
+            <br>
+            <em>Second Place for Navigating in GPS-denied Environments, Intelligent Vehicle Future Challenge</em>, 2019
+            <br>
+            <p></p>
+            <p>Lidar Odometry, Mapping, and Localization.</p>
+          </td>
+        </tr> 
+
+<!-- robot_hand -->
+          <tr onmouseout="robot_hand_stop()" onmouseover="robot_hand_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='robot_hand_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="img/robot_hand.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='img/robot_hand.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function robot_hand_start() {
+                  document.getElementById('robot_hand_image').style.opacity = "1";
+                }
+
+                function robot_hand_stop() {
+                  document.getElementById('robot_hand_image').style.opacity = "0";
+                }
+                robot_hand_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://rover-xingyu.github.io/">
+                <papertitle>Robotic Hand</papertitle>
+              </a>
+              <br>
+              <strong>Xingyu Chen</strong>,
+              Zhili Liu,
+              Yi Liu,
+              Yang Li,
+              Chenyang Liu
+              <br>
+              <em>National Second Prize, The 11th Chinese College Students Computer Design Contest</em>, 2018
+              <br>
+              <p></p>
+              <p>Remote Control
+              <br>Sensor fusion of IMU and BLE for localization.
+              <br>Hand gesture recognition based on computer vision.
+              <br>Robot hand controller based on potentiometer.
+              </p>
+            </td>
+          </tr>  
+     
+<!-- robot_arm -->
+          <tr onmouseout="robot_arm_stop()" onmouseover="robot_arm_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='robot_arm_image'><video  width=100% height=100% muted autoplay loop>
+                <source src="img/robot_arm.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='img/robot_arm.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function robot_arm_start() {
+                  document.getElementById('robot_arm_image').style.opacity = "1";
+                }
+
+                function robot_arm_stop() {
+                  document.getElementById('robot_arm_image').style.opacity = "0";
+                }
+                robot_arm_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://rover-xingyu.github.io/">
+                <papertitle>Robotic Arm</papertitle>
+              </a>
+              <br>
+              <strong>Xingyu Chen</strong>,
+              Zhili Liu,
+              Yang Li
+              <br>
+              <em>National Second Prize, The 11th iCAN International Contest of innovAtioN</em>, 2017
+              <br>
+              <p></p>
+              <p>Remote Control
+              <br>Hand gesture recognition based on computer vision.
+              <br>Structure design based on four-bar linkage.
+              </p>
+            </td>
+          </tr>           
+
+<!-- Invited Talks -->          
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <heading>Invited Talks</heading>
+          </td>
+        </tr>
+      </tbody></table>
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+<!-- HaNeRF_talk -->
+        <tr onmouseout="HaNeRF_talk_stop()" onmouseover="HaNeRF_talk_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id='HaNeRF_talk_image'><video  width=100% height=100% muted autoplay loop>
+              <img src='img/HaNeRF_talk.png' width="160">
+              Your browser does not support the video tag.
+              </video></div>
+              <img src='img/HaNeRF_talk.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function HaNeRF_talk_start() {
+                document.getElementById('HaNeRF_talk_image').style.opacity = "1";
+              }
+
+              function HaNeRF_talk_stop() {
+                document.getElementById('HaNeRF_talk_image').style.opacity = "0";
+              }
+              HaNeRF_talk_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://www.shenlanxueyuan.com/open/course/155">
+              <papertitle>光影幻象：神经辐射场中的时空流转</papertitle>
+            </a>
+            <br>
+            <strong>Xingyu Chen</strong>
+            <br>
+            <em>Shenlan College online education</em>, 2022
+            <br>
+            <p></p>
+            <p>Introduction about Neural Radiance Fields (NeRF) for unconstrained photo collections.
+            <br>Including <a href="https://www.matthewtancik.com/nerf">NeRF</a>, <a href="https://nerf-w.github.io/">NeRF in the Wild</a>, and <a href="https://rover-xingyu.github.io/Ha-NeRF/">Ha-NeRF</a> 
+            </p>
+          </td>
+        </tr> 
 
 <!-- end -->
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
