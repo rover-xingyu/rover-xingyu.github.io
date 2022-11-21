@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>L2G-NeRF: Local-to-Global Registration for Bundle-Adjusting Neural Radiance Fields</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  </head>
+
+  <!-- cover -->
+  <section>
+    <div class="jumbotron text-center mt-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2> L2G-NeRF: Local-to-Global Registration for Bundle-Adjusting </h2>
+            <h2> Neural Radiance Fields </h2>
+            <h4 style="color:#5a6268;">arXiv 2022</h4>
+            <hr>
+            <h6> 
+                <a href="https://fanegg.github.io/" target="_blank">Yue Chen</a><sup>1*</sup>,
+                <a href="https://rover-xingyu.github.io/" target="_blank">Xingyu Chen</a><sup>1*</sup>, 
+                <a href="https://xuanwangvc.github.io/" target="_blank">Xuan Wang</a><sup>2†</sup>, 
+                <a href="https://qzhang-cv.github.io/" target="_blank">Qi Zhang</a><sup>2</sup>, 
+                <a href="https://yuguo-xjtu.github.io/" target="_blank">Yu Guo</a><sup>1†</sup>, 
+                <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=en" target="_blank">Ying Shan</a><sup>2</sup>,
+                <a href="http://www.aiar.xjtu.edu.cn/info/1046/1242.htm">Fei Wang</a><sup>1</sup></h6>
+            <p>
+                <sup>*</sup>Equal Contribution &nbsp;&nbsp; 
+                <sup>†</sup>Corresponding Author &nbsp;&nbsp; 
+                <sup>1</sup>Xi'an Jiaotong University &nbsp;&nbsp; 
+                <sup>2</sup>Tencent AI Lab &nbsp;&nbsp; 
+              </p>
+            <div class="row justify-content-center">
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://openaccess.thecvf.com/content/CVPR2022/papers/Chen_Hallucinated_Neural_Radiance_Fields_in_the_Wild_CVPR_2022_paper.pdf" role="button"  target="_blank">
+                    <i class="fa fa-file"></i> Paper</a> </p>
+              </div>
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/rover-xingyu/Ha-NeRF" role="button"  target="_blank">
+                    <i class="fa fa-github-alt"></i> Code</a> </p>
+              </div>
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="files/Ha_NeRF_CVPR_2022_supp.pdf" role="button"  target="_blank">
+                    <i class="fa fa-file"></i> Supplementary</a> </p>
+              </div>
+              <div class="column">
+                <p class="mb-5"><a class="btn btn-large btn-light" href="files/Ha_NeRF_poster.pdf" role="button"  target="_blank">
+                  <i class="fa fa-file"></i> Poster</a> </p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- abstract -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Abstract</h3>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                  <source src="images/video-teaser_c.mp4" type="video/mp4">
+              </video>
+              <!-- <br><br> -->
+          <p class="text-justify">  </p>
+          <p class="text-justify">Neural Radiance Fields (NeRF) have achieved photorealistic novel views synthesis; however, the requirement of accurate camera poses limits its application. 
+            Despite analysis-by-synthesis extensions for jointly learning neural 3D representations and registering camera frames exist, 
+            they are susceptible to suboptimal solutions if poorly initialized. 
+            We propose L2G-NeRF, a Local-to-Global registration method for bundle-adjusting Neural Radiance Fields: 
+            first, a pixel-wise flexible alignment, followed by a framewise constrained parametric alignment. 
+            Pixel-wise local alignment is learned in an unsupervised way via a deep network which optimizes photometric reconstruction errors. 
+            Frame-wise global alignment is performed using differentiable parameter estimation solvers on the pixel-wise correspondences to find a global transformation. 
+            Experiments on synthetic and real-world data show that our method outperforms the current state-of-the-art 
+            in terms of high-fidelity reconstruction and resolving large camera pose misalignment. 
+            Our module is an easy-to-use plugin that can be applied to NeRF variants and other neural field applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>Overview video</h3>
+            <hr style="margin-top:0px">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe style="clip-path: inset(1px 1px)" width="100%" height="100%" src="https://www.youtube.com/embed/jUkfatSaJtA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <!-- Appearsnce Hallucination
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3> Appearance Hallucination of Brandenburg Gate </h3>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/app_Gate_c.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br> of Brandenburg Gate -->
+
+  <!-- Appearance
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>Appearance Hallucination of Brandenburg Gate</h3>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/app_Gate_c.mp4" type="video/mp4">
+            <h3>Appearance Hallucination of Trevi Fountain</h3>
+            <hr style="margin-top:0px">
+            </video>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/app_Fountain_c.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br> Hallucination -->
+
+  <!-- Appearance Hallucination -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>Appearance Hallucination</h3>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Brandenburg Gate</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/app_Gate_c.mp4" type="video/mp4">
+            </video>
+
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Trevi Fountain</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/app_Fountain_c.mp4" type="video/mp4">
+            </video>
+            </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <!-- Cross-Appearance Hallucination -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>Cross-Appearance Hallucination</h3>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">From Trevi Fountain to Brandenburg Gate</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/Fountain2Gate_c.mp4" type="video/mp4">
+            </video>
+
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">From Brandenburg Gate to Trevi Fountain</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/Gate2Fountain_c.mp4" type="video/mp4">
+            </video>
+            </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <!-- Appearance Hallucination From Artworks -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>Appearance Hallucination From Artworks</h3>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/art_c.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <!-- citing -->
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+          <h3>Citation</h3>
+          <hr style="margin-top:0px">
+              <pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
+<code>@inproceedings{chen2022hallucinated,
+  title={Hallucinated neural radiance fields in the wild},
+  author={Chen, Xingyu and Zhang, Qi and Li, Xiaoyu and Chen, Yue and Feng, Ying and Wang, Xuan and Wang, Jue},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={12943--12952},
+  year={2022}
+}</code></pre>
+          <hr>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center" style="margin-bottom:10px">
+      Thanks to <a href="https://lioryariv.github.io/" target="_blank">Lior Yariv</a> for the website template.
+  </footer>
+
+</body>
+</html>
