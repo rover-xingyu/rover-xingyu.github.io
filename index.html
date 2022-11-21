@@ -54,7 +54,56 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     
- 
+          
+<!-- l2g -->
+<tr onmouseout="l2g_stop()" onmouseover="l2g_start()">
+  <td style="padding:20px;width:25%;vertical-align:middle">
+    <div class="one">
+      <div class="two" id='l2g_image'><video  width=100% height=100% muted autoplay loop>
+      <source src="img/l2g.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video></div>
+      <img src='img/l2g.jpg' width="160">
+    </div>
+    <script type="text/javascript">
+      function l2g_start() {
+        document.getElementById('l2g_image').style.opacity = "1";
+      }
+
+      function l2g_stop() {
+        document.getElementById('l2g_image').style.opacity = "0";
+      }
+      l2g_stop()
+    </script>
+  </td>
+  <td style="padding:20px;width:75%;vertical-align:middle">
+    <a href="https://rover-xingyu.github.io/L2G-NeRF/">
+      <papertitle>Local-to-Global Registration for Bundle-Adjusting Neural Radiance Fields</papertitle>
+    </a>
+    <br>
+    <strong>Yue Chen</strong>,
+    <a href="https://rover-xingyu.github.io/">Xingyu Chen</a>,
+    <a href="https://xuanwangvc.github.io/">Xuan Wang</a>,
+    <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
+    <a href="https://yuguo-xjtu.github.io/">Yu Guo</a>,
+    <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=en">Ying Shan</a>,
+    <a href="http://www.aiar.xjtu.edu.cn/info/1046/1242.htm">Fei Wang</a>
+    <br>
+    <em>arxiv preprint</em>, 2022
+    <br>
+    <a href="https://rover-xingyu.github.io/L2G-NeRF/">project page</a> /
+    <!-- <a href="https://arxiv.org/pdf/2203.14402.pdf">arXiv</a> /
+    <a href="https://fanegg.github.io/UV-Volumes/files/UV_Volumes_Supplementary_Material.pdf">supplementary</a> / -->
+    <a href="https://github.com/rover-xingyu/L2G-NeRF">code</a>
+    <p></p>
+    <p>We propose L2G-NeRF, a Local-to-Global registration method for bundle-adjusting Neural Radiance Fields: 
+      first, a pixel-wise flexible alignment, followed by a framewise constrained parametric alignment. 
+      Pixel-wise local alignment is learned in an unsupervised way via a deep network which optimizes photometric reconstruction errors. 
+      Frame-wise global alignment is performed using differentiable parameter estimation solvers on the pixel-wise correspondences to find a global transformation.</p>
+      
+  </td>
+</tr> 
+          
 <!-- PROCA -->
 <tr onmouseout="PROCA_stop()" onmouseover="PROCA_start()">
   <td style="padding:20px;width:25%;vertical-align:middle">
