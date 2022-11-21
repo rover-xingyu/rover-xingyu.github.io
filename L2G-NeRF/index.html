@@ -40,16 +40,16 @@
                     <i class="fa fa-file"></i> Paper</a> </p>
               </div>
               <div class="column">
-                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/rover-xingyu/Ha-NeRF" role="button"  target="_blank">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/rover-xingyu/L2G-NeRF" role="button"  target="_blank">
                     <i class="fa fa-github-alt"></i> Code</a> </p>
               </div>
-              <div class="column">
+              <!-- <div class="column">
                   <p class="mb-5"><a class="btn btn-large btn-light" href="files/Ha_NeRF_CVPR_2022_supp.pdf" role="button"  target="_blank">
                     <i class="fa fa-file"></i> Supplementary</a> </p>
               </div>
               <div class="column">
                 <p class="mb-5"><a class="btn btn-large btn-light" href="files/Ha_NeRF_poster.pdf" role="button"  target="_blank">
-                  <i class="fa fa-file"></i> Poster</a> </p>
+                  <i class="fa fa-file"></i> Poster</a> </p> -->
             </div>
             </div>
           </div>
@@ -65,9 +65,7 @@
         <div class="col-12 text-center">
           <h3>Abstract</h3>
             <hr style="margin-top:0px">
-            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                  <source src="images/video-teaser_c.mp4" type="video/mp4">
-              </video>
+              <img class="img-fluid" src="images/L2G-NeRF.jpg">
               <!-- <br><br> -->
           <p class="text-justify">  </p>
           <p class="text-justify">Neural Radiance Fields (NeRF) have achieved photorealistic novel views synthesis; however, the requirement of accurate camera poses limits its application. 
@@ -101,58 +99,21 @@
   </section>
   <br>
 
-  <!-- Appearsnce Hallucination
+  <!-- Neural Image Alignment (2D) -->
   <section>
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-            <h3> Appearance Hallucination of Brandenburg Gate </h3>
+            <h3>Neural Image Alignment (2D)</h3>
             <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Rigid Alignment </h4>
             <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                <source src="images/app_Gate_c.mp4" type="video/mp4">
-            </video>
-        </div>
-      </div>
-    </div>
-  </section>
-  <br> of Brandenburg Gate -->
-
-  <!-- Appearance
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-            <h3>Appearance Hallucination of Brandenburg Gate</h3>
-            <hr style="margin-top:0px">
-            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                <source src="images/app_Gate_c.mp4" type="video/mp4">
-            <h3>Appearance Hallucination of Trevi Fountain</h3>
-            <hr style="margin-top:0px">
-            </video>
-            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                <source src="images/app_Fountain_c.mp4" type="video/mp4">
-            </video>
-        </div>
-      </div>
-    </div>
-  </section>
-  <br> Hallucination -->
-
-  <!-- Appearance Hallucination -->
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-            <h3>Appearance Hallucination</h3>
-            <hr style="margin-top:0px">
-            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Brandenburg Gate</h4>
-            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                <source src="images/app_Gate_c.mp4" type="video/mp4">
+                <source src="images/girl.mp4" type="video/mp4">
             </video>
 
-            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Trevi Fountain</h4>
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Homography Alignment </h4>
             <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                <source src="images/app_Fountain_c.mp4" type="video/mp4">
+                <source src="images/cat.mp4" type="video/mp4">
             </video>
             </video>
         </div>
@@ -161,22 +122,33 @@
   </section>
   <br>
 
-  <!-- Cross-Appearance Hallucination -->
+  <!-- NeRF (3D): Synthetic Objects -->
   <section>
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-            <h3>Cross-Appearance Hallucination</h3>
+            <h3>NeRF (3D): Synthetic Objects</h3>
             <hr style="margin-top:0px">
-            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">From Trevi Fountain to Brandenburg Gate</h4>
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Evaluation</h4>
             <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                <source src="images/Fountain2Gate_c.mp4" type="video/mp4">
+                <source src="images/ship.mp4" type="video/mp4">
             </video>
-
-            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">From Brandenburg Gate to Trevi Fountain</h4>
+            <hr style="margin-top:0px">
             <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                <source src="images/Gate2Fountain_c.mp4" type="video/mp4">
+                  <source src="images/lego.mp4" type="video/mp4">
             </video>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/drum.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+               <source src="images/synthesis.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Ablation study</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/hotdog.mp4" type="video/mp4">
             </video>
         </div>
       </div>
@@ -184,15 +156,34 @@
   </section>
   <br>
 
-  <!-- Appearance Hallucination From Artworks -->
+  <!-- NeRF (3D): Real-World Scenes -->
   <section>
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-            <h3>Appearance Hallucination From Artworks</h3>
+            <h3>NeRF (3D): Real-World Scenes</h3>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Evaluation</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/fern.mp4" type="video/mp4">
+            </video>
             <hr style="margin-top:0px">
             <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
-                <source src="images/art_c.mp4" type="video/mp4">
+              <source src="images/toys.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/foods.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Ablation study</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/room.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">More Examples</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/real_world.mp4" type="video/mp4">
             </video>
         </div>
       </div>
@@ -201,7 +192,7 @@
   <br>
 
   <!-- citing -->
-  <div class="container">
+  <!-- <div class="container">
     <div class="row ">
       <div class="col-12">
           <h3>Citation</h3>
@@ -217,7 +208,7 @@
           <hr>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <footer class="text-center" style="margin-bottom:10px">
       Thanks to <a href="https://lioryariv.github.io/" target="_blank">Lior Yariv</a> for the website template.
