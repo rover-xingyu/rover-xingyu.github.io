@@ -1,557 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>L2G-NeRF: Local-to-Global Registration for Bundle-Adjusting Neural Radiance Fields</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  </head>
 
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <title>Xingyu Chen</title>
-  
-  <meta name="author" content="Xingyu Chen">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-  <link rel="icon" type="image/png" href="img/star.png">
-</head>
-
-<body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Xingyu Chen (陈星宇)</name>
+  <!-- cover -->
+  <section>
+    <div class="jumbotron text-center mt-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2> L2G-NeRF: Local-to-Global Registration for Bundle-Adjusting </h2>
+            <h2> Neural Radiance Fields </h2>
+            <h4 style="color:#5a6268;">arXiv 2022</h4>
+            <hr>
+            <h6> 
+                <a href="https://fanegg.github.io/" target="_blank">Yue Chen</a><sup>1*</sup>,
+                <a href="https://rover-xingyu.github.io/" target="_blank">Xingyu Chen</a><sup>1*</sup>, 
+                <a href="https://xuanwangvc.github.io/" target="_blank">Xuan Wang</a><sup>2†</sup>, 
+                <a href="https://qzhang-cv.github.io/" target="_blank">Qi Zhang</a><sup>2</sup>, 
+                <a href="https://yuguo-xjtu.github.io/" target="_blank">Yu Guo</a><sup>1†</sup>, 
+                <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=en" target="_blank">Ying Shan</a><sup>2</sup>,
+                <a href="http://www.aiar.xjtu.edu.cn/info/1046/1242.htm">Fei Wang</a><sup>1</sup></h6>
+            <p>
+                <sup>*</sup>Equal Contribution &nbsp;&nbsp; 
+                <sup>†</sup>Corresponding Author &nbsp;&nbsp; 
+                <sup>1</sup>Xi'an Jiaotong University &nbsp;&nbsp; 
+                <sup>2</sup>Tencent AI Lab &nbsp;&nbsp; 
               </p>
-              <p>I am a master student at <a href="http://www.aiar.xjtu.edu.cn/#">Institute of Artificial Intelligence and Robotics</a> under <a href="http://en.xjtu.edu.cn">Xi’an Jiaotong University</a>, where I work on computer vision, computer graphics and robotics.
-              </p>
-              <p>
-                In 2021 and 2022, I was an intern in <a href="https://juewang725.github.io/">Jue Wang's</a> Visual Computing Center at <a href="https://ai.tencent.com/ailab/en/index/">Tencent AI lab</a>.
-                I did my undergrad at <a href="http://english.cqu.edu.cn/">Chongqing University</a>, where I worked on problems in mechatronics of robotics.
-              </p>
-              <p style="text-align:center">
-              <a href="mailto:xingyu@stu.xjtu.edu.cn">Email</a> &nbsp/&nbsp
-<!--           <a href="data/cv.pdf">CV</a> &nbsp/&nbsp -->
-              <a href="https://scholar.google.com/citations?user=gDHPrWEAAAAJ&hl=zh-CN">Google Scholar</a> &nbsp/&nbsp
-<!--           <a href="https://twitter.com/BenMildenhall">Twitter</a> &nbsp/&nbsp -->
-              <a href="https://github.com/rover-xingyu/">GitHub</a> 
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="img/me.jpg"><img src="img/me.jpg" style="width:100%;max-width:100%" alt="profile photo" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <!-- <p>
-                Representative papers are <span class="highlight">highlighted</span>.
-                The CVPR is the premier conference in computer vision research community.
-                The ICRA and IV are top conferences in the field of robotics and intelligent vehicles.
-              </p> -->
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    
-          
-<!-- l2g -->
-<tr onmouseout="l2g_stop()" onmouseover="l2g_start()">
-  <td style="padding:20px;width:25%;vertical-align:middle">
-    <div class="one">
-      <div class="two" id='l2g_image'><video  width=100% height=100% muted autoplay loop>
-      <source src="img/l2g.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-      </video></div>
-      <img src='img/l2g.jpg' width="160">
-    </div>
-    <script type="text/javascript">
-      function l2g_start() {
-        document.getElementById('l2g_image').style.opacity = "1";
-      }
-
-      function l2g_stop() {
-        document.getElementById('l2g_image').style.opacity = "0";
-      }
-      l2g_stop()
-    </script>
-  </td>
-  <td style="padding:20px;width:75%;vertical-align:middle">
-    <a href="https://rover-xingyu.github.io/L2G-NeRF/">
-      <papertitle>Local-to-Global Registration for Bundle-Adjusting Neural Radiance Fields</papertitle>
-    </a>
-    <br>
-    <a href="https://fanegg.github.io/">Yue Chen</a>,
-    <strong>Xingyu Chen</strong>,,
-    <a href="https://xuanwangvc.github.io/">Xuan Wang</a>,
-    <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
-    <a href="https://yuguo-xjtu.github.io/">Yu Guo</a>,
-    <a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=en">Ying Shan</a>,
-    <a href="http://www.aiar.xjtu.edu.cn/info/1046/1242.htm">Fei Wang</a>
-    <br>
-    <em>arxiv preprint</em>, 2022
-    <br>
-    <a href="https://rover-xingyu.github.io/L2G-NeRF/">project page</a> /
-    <!-- <a href="https://arxiv.org/pdf/2203.14402.pdf">arXiv</a> /
-    <a href="https://fanegg.github.io/UV-Volumes/files/UV_Volumes_Supplementary_Material.pdf">supplementary</a> / -->
-    <a href="https://github.com/rover-xingyu/L2G-NeRF">code</a>
-    <p></p>
-    <p>We propose L2G-NeRF, a Local-to-Global registration method for bundle-adjusting Neural Radiance Fields: 
-      first, a pixel-wise flexible alignment, followed by a framewise constrained parametric alignment. 
-      Pixel-wise local alignment is learned in an unsupervised way via a deep network which optimizes photometric reconstruction errors. 
-      Frame-wise global alignment is performed using differentiable parameter estimation solvers on the pixel-wise correspondences to find a global transformation.</p>
-  </td>
-</tr> 
-          
-<!-- PROCA -->
-<tr onmouseout="PROCA_stop()" onmouseover="PROCA_start()">
-  <td style="padding:20px;width:25%;vertical-align:middle">
-    <div class="one">
-      <div class="two" id='PROCA_image'>
-        <img src='img/proca2.jpg' width="160">
+            <div class="row justify-content-center">
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://arxiv.org/pdf/2211.11505.pdf" role="button"  target="_blank">
+                    <i class="fa fa-file"></i> Paper</a> </p>
+              </div>
+              <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/rover-xingyu/L2G-NeRF" role="button"  target="_blank">
+                    <i class="fa fa-github-alt"></i> Code</a> </p>
+              </div>
+              <!-- <div class="column">
+                  <p class="mb-5"><a class="btn btn-large btn-light" href="files/Ha_NeRF_CVPR_2022_supp.pdf" role="button"  target="_blank">
+                    <i class="fa fa-file"></i> Supplementary</a> </p>
+              </div>
+              <div class="column">
+                <p class="mb-5"><a class="btn btn-large btn-light" href="files/Ha_NeRF_poster.pdf" role="button"  target="_blank">
+                  <i class="fa fa-file"></i> Poster</a> </p> -->
+            </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <img src='img/proca1.jpg' width="160">
     </div>
-    <script type="text/javascript">
-      function PROCA_start() {
-        document.getElementById('PROCA_image').style.opacity = "1";
-      }
+  </section>
 
-      function PROCA_stop() {
-        document.getElementById('PROCA_image').style.opacity = "0";
-      }
-      PROCA_stop()
-    </script>
-  </td>
-  <td style="padding:20px;width:75%;vertical-align:middle">
-    <a href="https://rover-xingyu.github.io/">
-      <papertitle>PROCA: Place Recognition under Occlusion and Changing Appearance via Disentangled Representations</papertitle>
-    </a>
-    <br>
-    <a href="https://fanegg.github.io/">Yue Chen</a>,
-    <strong>Xingyu Chen</strong>
-    <br>
-    <em>arxiv preprint</em>, 2022
-    <br>
-    <!-- <a href="https://arxiv.org/pdf/2203.14402.pdf">arXiv</a> / -->
-    <a href="https://github.com/rover-xingyu/PROCA">code</a>
-    <p></p>
-    <p>
-      We propose PROCA, an unsupervised approach to decompose the image representation into three codes: a place code used as a descriptor to retrieve images, an appearance code that captures appearance properties, and an occlusion code that encodes occlusion content.
-    </p>
-  </td>
-</tr>          
-          
-<!-- uv -->
-          <tr onmouseout="uv_stop()" onmouseover="uv_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='uv_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/uv_volume.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/retexture.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function uv_start() {
-                  document.getElementById('uv_image').style.opacity = "1";
-                }
+  <!-- abstract -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h3>Abstract</h3>
+            <hr style="margin-top:0px">
+              <img class="img-fluid" src="images/L2G-NeRF.jpg">
+              <!-- <br><br> -->
+          <p class="text-justify">  </p>
+          <p class="text-justify">Neural Radiance Fields (NeRF) have achieved photorealistic novel views synthesis; however, the requirement of accurate camera poses limits its application. 
+            Despite analysis-by-synthesis extensions for jointly learning neural 3D representations and registering camera frames exist, 
+            they are susceptible to suboptimal solutions if poorly initialized. 
+            We propose L2G-NeRF, a Local-to-Global registration method for bundle-adjusting Neural Radiance Fields: 
+            first, a pixel-wise flexible alignment, followed by a framewise constrained parametric alignment. 
+            Pixel-wise local alignment is learned in an unsupervised way via a deep network which optimizes photometric reconstruction errors. 
+            Frame-wise global alignment is performed using differentiable parameter estimation solvers on the pixel-wise correspondences to find a global transformation. 
+            Experiments on synthetic and real-world data show that our method outperforms the current state-of-the-art 
+            in terms of high-fidelity reconstruction and resolving large camera pose misalignment. 
+            Our module is an easy-to-use plugin that can be applied to NeRF variants and other neural field applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
 
-                function uv_stop() {
-                  document.getElementById('uv_image').style.opacity = "0";
-                }
-                uv_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://fanegg.github.io/UV-Volumes/">
-                <papertitle>UV Volumes for Real-time Rendering of Editable Free-view Human Performance</papertitle>
-              </a>
-              <br>
-              <a href="https://fanegg.github.io/">Yue Chen</a>,
-              <a href="https://xuanwangvc.github.io/">Xuan Wang</a>,
-              <strong>Xingyu Chen</strong>,
-              <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
-              <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-              <a href="https://yuguo-xjtu.github.io/">Yu Guo</a>,
-              <a href="https://juewang725.github.io/">Jue Wang</a>,
-              <a href="http://www.aiar.xjtu.edu.cn/info/1046/1242.htm">Fei Wang</a>
-              <br>
-              <em>arxiv preprint</em>, 2022
-              <br>
-              <a href="https://fanegg.github.io/UV-Volumes/">project page</a> /
-              <a href="https://arxiv.org/pdf/2203.14402.pdf">arXiv</a> /
-              <a href="https://fanegg.github.io/UV-Volumes/files/UV_Volumes_Supplementary_Material.pdf">supplementary</a> /
-              <a href="https://github.com/fanegg/UV-Volumes">code</a>
-              <p></p>
-              <p>We decompose the dynamic human into 3D UV Volumes and a 2D texture. 
-                The disentanglement of appearance from geometry enables us to achieve real-time novel view synthesis, 
-                retexturing of 3D human by editing the 2D texture, 
-                reshaping and reposing by changing the parameters of human model while keeping the texture untouched.</p>
-            </td>
-          </tr> 
-
-<!-- bpnpl -->
-          <tr onmouseout="bpnpl_stop()" onmouseover="bpnpl_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='bpnpl_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/bpnpl.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/bpnpl.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function bpnpl_start() {
-                  document.getElementById('bpnpl_image').style.opacity = "1";
-                }
-
-                function bpnpl_stop() {
-                  document.getElementById('bpnpl_image').style.opacity = "0";
-                }
-                bpnpl_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://rover-xingyu.github.io/">
-                <papertitle>Sparse Semantic Map-Based Monocular Localization in Traffic Scenes Using Learned 2D-3D Point-Line Correspondences</papertitle>
-              </a>
-              <br>
-              <strong>Xingyu Chen</strong>,
-              <a href="https://gr.xjtu.edu.cn/en/web/jrxue">Jianru Xue</a>,
-              <a href="https://gr.xjtu.edu.cn/en/web/pangsm/4">Shanmin Pang</a>
-              <br>
-              <em>IEEE Robotics and Automation Letters (RA-L)</em>, 2022
-              <br>
-<!--               <a href="https://rover-xingyu.github.io/">project page</a> / -->
-              <a href="https://arxiv.org/pdf/2210.04543.pdf">arXiv</a> /
-              <a href="https://ieeexplore.ieee.org/document/9895296">paper</a> 
-              <p></p>
-              <p>Given a sparse semantic map that consists of simplified elements (e.g., pole lines, traffic sign midpoints), the camera pose is estimated by learning the corresponding features between the 2D semantic elements from image and the 3D elements from sparse semantic map. The proposed sparse semantic map-based localization approach is robust against occlusion and long-term appearance changes in the environments.</p>
-            </td>
-          </tr> 
-
-<!-- hanerf -->
-          <tr onmouseout="hanerf_stop()" onmouseover="hanerf_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='hanerf_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/video-teaser_crop.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/teaser.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function hanerf_start() {
-                  document.getElementById('hanerf_image').style.opacity = "1";
-                }
-
-                function hanerf_stop() {
-                  document.getElementById('hanerf_image').style.opacity = "0";
-                }
-                hanerf_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://rover-xingyu.github.io/Ha-NeRF/">
-                <papertitle>Ha-NeRF&#x1F606: Hallucinated Neural Radiance Fields in the Wild</papertitle>
-              </a>
-              <br>
-              <strong>Xingyu Chen</strong>,
-              <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
-              <a href="https://xiaoyu258.github.io/">Xiaoyu Li</a>,
-              <a href="https://fanegg.github.io/">Yue Chen</a>,
-              <a href="https://rover-xingyu.github.io/">Ying Feng</a>,
-              <a href="https://xuanwangvc.github.io/">Xuan Wang</a>,
-              <a href="https://juewang725.github.io/">Jue Wang</a>
-              <br>
-              <em>IEEE Computer Vision and Pattern Recognition (CVPR)</em>, 2022
-              <br>
-              <a href="https://rover-xingyu.github.io/Ha-NeRF/">project page</a> /
-              <a href="https://arxiv.org/pdf/2111.15246.pdf">arXiv</a> /
-              <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Chen_Hallucinated_Neural_Radiance_Fields_in_the_Wild_CVPR_2022_paper.pdf">paper</a> /
-              <a href="https://rover-xingyu.github.io/Ha-NeRF/files/Ha_NeRF_CVPR_2022_supp.pdf">supplementary</a> /
-              <a href="https://github.com/rover-xingyu/Ha-NeRF">code</a>
-              <p></p>
-              <p>We recover hallucinated neural radiance fields (Ha-NeRF) from a group of tourism images with variable appearance and complex occlusions. Our method can consistently render free-occlusion views which hallucinate different appearances.</p>
-            </td>
-          </tr> 
-
-<!-- rdsslam -->
-          <tr onmouseout="rds_stop()" onmouseover="rds_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='rds_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/rds-slam_cccc.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/rds-slam2.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function rds_start() {
-                  document.getElementById('rds_image').style.opacity = "1";
-                }
-
-                function rds_stop() {
-                  document.getElementById('rds_image').style.opacity = "0";
-                }
-                rds_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://rover-xingyu.github.io/">
-                <papertitle>Using Detection, Tracking and Prediction in Visual SLAM to Achieve Real-time Semantic Mapping of Dynamic Scenarios</papertitle>
-              </a>
-              <br>
-              <strong>Xingyu Chen</strong>,
-              <a href="https://gr.xjtu.edu.cn/en/web/jrxue">Jianru Xue</a>,
-              <a href="http://www.lotvs.net/JianwuFang/">Jianwu Fang</a>,
-              <a href="https://rover-xingyu.github.io/">Yuxin Pan</a>,
-              <a href="https://scholar.google.com.hk/citations?user=iqMe3p8AAAAJ&hl=zh-CN">Nanning Zheng</a>
-              <br>
-              <em>IEEE Intelligent Vehicles Symposium (IV)</em>, 2020
-              <br>
-              <a href="https://arxiv.org/abs/2210.04562">arXiv</a> /
-              <a href="https://ieeexplore.ieee.org/document/9304693">paper</a>
-              <p></p>
-              <p>Instead of detecting objects in all frames, we detect only keyframes to get the movable objects and use a low-cost prediction in other frames to predict where the movable objects are to reduce the computational cost.</p>
-            </td>
-          </tr>     
-
-<!-- NCM -->
-          <tr onmouseout="NCM_stop()" onmouseover="NCM_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='NCM_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/ICRA2020_web_c.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/ICRA2020_overview.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function NCM_start() {
-                  document.getElementById('NCM_image').style.opacity = "1";
-                }
-
-                function NCM_stop() {
-                  document.getElementById('NCM_image').style.opacity = "0";
-                }
-                NCM_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://rover-xingyu.github.io/">
-                <papertitle>Navigation Command Matching for Vision-based Autonomous Driving</papertitle>
-              </a>
-              <br>
-              <a href="https://rover-xingyu.github.io/">Yuxin Pan</a>,
-              <a href="https://gr.xjtu.edu.cn/en/web/jrxue">Jianru Xue</a>,
-              <a href="https://scholar.google.no/citations?user=n4v0ev8AAAAJ&hl=no">Pengfei Zhang</a>,
-              <a href="https://wlouyang.github.io/">Wanli Ouyang</a>,
-              <a href="http://www.lotvs.net/JianwuFang/">Jianwu Fang</a>,
-              <strong>Xingyu Chen</strong>
-              <br>
-              <em>IEEE International Conference on Robotics and Automation (ICRA)</em>, 2020
-              <br>
-              <a href="https://www.researchgate.net/profile/Pan-Yuxin/publication/340082526_Navigation_Command_Matching_for_Vision-based_Autonomous_Driving/links/600a288192851c13fe2a8d5a/Navigation-Command-Matching-for-Vision-based-Autonomous-Driving.pdf">ResearchGate</a> /
-              <a href="https://ieeexplore.ieee.org/document/9196609">paper</a>
-              <p></p>
-              <p>Smooth rewards are crucial to discriminate actions generated from sub-optimal policy, we propose a navigation command matching (NCM) model to address this issue.</p>
-            </td>
-          </tr>   
-
-
-<!-- project -->          
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Projects</heading>
-          </td>
-        </tr>
-      </tbody></table>
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-<!-- kuafu -->
-        <tr onmouseout="kuafu_stop()" onmouseover="kuafu_start()">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='kuafu_image'><video  width=100% height=100% muted autoplay loop>
-              <source src="img/kuafu.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-              </video></div>
-              <img src='img/kuafu.png' width="160">
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>Overview video</h3>
+            <hr style="margin-top:0px">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe style="clip-path: inset(1px 1px)" width="100%" height="100%" src="https://www.youtube.com/embed/jUkfatSaJtA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
             </div>
-            <script type="text/javascript">
-              function kuafu_start() {
-                document.getElementById('kuafu_image').style.opacity = "1";
-              }
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
 
-              function kuafu_stop() {
-                document.getElementById('kuafu_image').style.opacity = "0";
-              }
-              kuafu_stop()
-            </script>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <a href="https://gr.xjtu.edu.cn/en/web/jrxue/home">
-              <papertitle>Kuafu (Autonomous Vehicle)</papertitle>
-            </a>
-            <br>
-            <strong>IEEE Intelligent Transportation Systems Institute Lead Award</strong>
-            <br>
-            <em>Second Place for Navigating in GPS-denied Environments, Intelligent Vehicle Future Challenge</em>, 2019
-            <br>
-            <p></p>
-            <p>Lidar Odometry, Mapping, and Localization.</p>
-          </td>
-        </tr> 
+  <!-- Neural Image Alignment (2D) -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>Neural Image Alignment (2D)</h3>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Rigid Alignment </h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/girl.mp4" type="video/mp4">
+            </video>
 
-<!-- robot_hand -->
-          <tr onmouseout="robot_hand_stop()" onmouseover="robot_hand_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='robot_hand_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/robot_hand.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/robot_hand.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function robot_hand_start() {
-                  document.getElementById('robot_hand_image').style.opacity = "1";
-                }
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Homography Alignment </h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/cat.mp4" type="video/mp4">
+            </video>
+            </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
 
-                function robot_hand_stop() {
-                  document.getElementById('robot_hand_image').style.opacity = "0";
-                }
-                robot_hand_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://rover-xingyu.github.io/">
-                <papertitle>Robotic Hand</papertitle>
-              </a>
-              <br>
-              <strong>Xingyu Chen</strong>,
-              Zhili Liu,
-              Yi Liu,
-              Yang Li,
-              Chenyang Liu
-              <br>
-              <em>National Second Prize, The 11th Chinese College Students Computer Design Contest</em>, 2018
-              <br>
-              <p></p>
-              <p>Remote Control
-              <br>Sensor fusion of IMU and BLE for localization.
-              <br>Hand gesture recognition based on computer vision.
-              <br>Robot hand controller based on potentiometer.
-              </p>
-            </td>
-          </tr>  
-     
-<!-- robot_arm -->
-          <tr onmouseout="robot_arm_stop()" onmouseover="robot_arm_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='robot_arm_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="img/robot_arm.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='img/robot_arm.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function robot_arm_start() {
-                  document.getElementById('robot_arm_image').style.opacity = "1";
-                }
+  <!-- NeRF (3D): Synthetic Objects -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>NeRF (3D): Synthetic Objects</h3>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Evaluation</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/ship.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                  <source src="images/lego.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/drum.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+               <source src="images/synthesis.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Ablation study</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/hotdog.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
 
-                function robot_arm_stop() {
-                  document.getElementById('robot_arm_image').style.opacity = "0";
-                }
-                robot_arm_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://rover-xingyu.github.io/">
-                <papertitle>Robotic Arm</papertitle>
-              </a>
-              <br>
-              <strong>Xingyu Chen</strong>,
-              Zhili Liu,
-              Yang Li
-              <br>
-              <em>National Second Prize, The 11th iCAN International Contest of innovAtioN</em>, 2017
-              <br>
-              <p></p>
-              <p>Remote Control
-              <br>Hand gesture recognition based on computer vision.
-              <br>Structure design based on four-bar linkage.
-              </p>
-            </td>
-          </tr>           
+  <!-- NeRF (3D): Real-World Scenes -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+            <h3>NeRF (3D): Real-World Scenes</h3>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Evaluation</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/fern.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+              <source src="images/toys.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/foods.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">Ablation study</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/room.mp4" type="video/mp4">
+            </video>
+            <hr style="margin-top:0px">
+            <h4 style="margin-top:20px; margin-bottom:20px; color:#717980">More Examples</h4>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="images/real_world.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
 
-<!-- Invited Talks -->          
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Invited Talks</heading>
-          </td>
-        </tr>
-      </tbody></table>
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <!-- citing -->
+  <!-- <div class="container">
+    <div class="row ">
+      <div class="col-12">
+          <h3>Citation</h3>
+          <hr style="margin-top:0px">
+              <pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
+<code>@article{chen2022uvvolumes,
+  title={Local-to-Global Registration for Bundle-Adjusting Neural Radiance Fields},
+  author={Chen, Yue and Chen, Xingyu and Wang, Xuan and Zhang, Qi and Guo, Yu and Shan, Ying and Wang, Fei},
+  journal={arXiv preprint arXiv:2211.11505},
+  year={2022}
+}</code></pre>
+          <hr>
+      </div>
+    </div>
+  </div> -->
 
-<!-- HaNeRF_talk -->
-        <tr onmouseout="HaNeRF_talk_stop()" onmouseover="HaNeRF_talk_start()">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='HaNeRF_talk_image'><video  width=100% height=100% muted autoplay loop>
-              <img src='img/HaNeRF_talk.png' width="160">
-              Your browser does not support the video tag.
-              </video></div>
-              <img src='img/HaNeRF_talk.png' width="160">
-            </div>
-            <script type="text/javascript">
-              function HaNeRF_talk_start() {
-                document.getElementById('HaNeRF_talk_image').style.opacity = "1";
-              }
+  <footer class="text-center" style="margin-bottom:10px">
+      Thanks to <a href="https://lioryariv.github.io/" target="_blank">Lior Yariv</a> for the website template.
+  </footer>
 
-              function HaNeRF_talk_stop() {
-                document.getElementById('HaNeRF_talk_image').style.opacity = "0";
-              }
-              HaNeRF_talk_stop()
-            </script>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <a href="https://www.shenlanxueyuan.com/open/course/155">
-              <papertitle>光影幻象：神经辐射场中的时空流转</papertitle>
-            </a>
-            <br>
-            <strong>Xingyu Chen</strong>
-            <br>
-            <em>Shenlan College online education</em>, 2022
-            <br>
-            <p></p>
-            <p>Introduction about Neural Radiance Fields (NeRF) for unconstrained photo collections.
-            <br>Including <a href="https://www.matthewtancik.com/nerf">NeRF</a>, <a href="https://nerf-w.github.io/">NeRF in the Wild</a>, and <a href="https://rover-xingyu.github.io/Ha-NeRF/">Ha-NeRF</a> 
-            </p>
-          </td>
-        </tr> 
-
-<!-- end -->
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td>
-        <br>
-        <p align="right">
-          <font size="2">
-          template adapted from this awesome <a href="https://jonbarron.info">Jon Barron</a> website. <br>
-          Last updated June 2022.
-      </font>
-        </p>
-        </td>
-      </tr>
-      </table>
-    </td>
-    </tr>
-  </table>
-  </body>
+</body>
 </html>
