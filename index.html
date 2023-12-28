@@ -96,21 +96,20 @@
           <name>Xingyu Chen (陈星宇)</name>
         </p>
         <p>
-          I am passionate about bridging the physical and information worlds, and advancing next-generation AR/robotics with 3D spatial intelligence.
-
+          <!-- I am passionate about bridging the physical and information worlds, and advancing next-generation AR/robotics with 3D spatial intelligence. -->
+          <!-- I am passionate about enabling artificial intelligence to understand the dynamic 3D world from 2D images in a generalizable manner.  -->
+          <!-- I am passionate about enabling artificial intelligence to learn a reusable concept of the dynamic 3D world from 2D images. -->
+          I am passionate about enabling artificial intelligence to learn reusable concepts of the dynamic 3D world from 2D images.
           I obtained my M.S. and B.S. from the <a href="http://www.aiar.xjtu.edu.cn/#">Institute of Artificial Intelligence and Robotics</a> at 
-          <a href="http://en.xjtu.edu.cn">Xi’an Jiaotong University</a> and <a href="http://english.cqu.edu.cn/">Chongqing University</a>.
+          <a href="http://en.xjtu.edu.cn">Xi'an Jiaotong University</a> and <a href="http://english.cqu.edu.cn/">Chongqing University</a>.
         </p>  
         <p>
           In 2021 and 2022, I was a research intern at <a href="https://ai.tencent.com/ailab/en/index/">Tencent AI lab</a>, 
           working with <a href="https://xuanwangvc.github.io/">Xuan Wang</a> and <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
           hosted by <a href="https://juewang725.github.io/">Jue Wang</a>.
         </p>
-          <!-- My research topics include computer vision, graphics, and neural fields. 
-          Much of my research is about inferring the physical world (shape, appearance, motion, etc.) and camera poses from images.  -->
-          My research topics include computer vision, graphics, and neural fields, 
-          specifically in inferring the physical world (shape, appearance, motion, etc.) and camera poses from images. 
-          <!-- I focus on computer vision, graphics, and neural fields to infer the physical world (shape, appearance, motion, etc.) and camera poses from images.   -->
+          My research topics include computer vision, machine learning, and computer graphics, 
+          specifically in inferring disentangled representations (shape, appearance, motion, camera poses, etc.) from images.
         <p>
         </p>
         <p align=center>
@@ -180,7 +179,7 @@
           <p>
             <!-- Representative papers are <span class="highlight">highlighted</span>. -->
             <!-- * denotes equal contribution co-authorship, † denotes corresponding author -->
-            Equal Contribution * , Corresponding Author †
+            Equal Contribution *, Corresponding Author †, Project Lead ⚑
           </p>
         </td>
       </tr>
@@ -213,7 +212,7 @@
             </a>
             <br>
             <a href="https://fanegg.github.io/">Yue Chen*</a>,
-            <strong>Xingyu Chen*</strong>,
+            <strong>Xingyu Chen*⚑</strong>,
             <a href="https://xuanwangvc.github.io/">Xuan Wang†</a>,
             <a href="https://qzhang-cv.github.io/">Qi Zhang</a>,
             <a href="https://yuguo-xjtu.github.io/">Yu Guo†</a>,
@@ -305,17 +304,18 @@
             </script>
           </td>
           <td style="padding:20px;width:75%;vertical-align:middle">
-            <a href="https://arxiv.org/pdf/2211.11439.pdf">
+            <a href="https://github.com/rover-xingyu/PROCA">
               <papertitle>PROCA: Place Recognition under Occlusion and Changing Appearance via Disentangled Representations</papertitle>
             </a>
             <br>
             <a href="https://fanegg.github.io/">Yue Chen</a>,
-            <strong>Xingyu Chen†</strong>,
-            <a href="https://github.com/YicenJoJo">Yicen Li</a>
+            <strong>Xingyu Chen†⚑</strong>,
+            <a href="https://yicen-research.webador.com/">Yicen Li</a>
             <br>
             IEEE International Conference on Robotics and Automation (<strong>ICRA</strong>), 2023
             <br>
             <a href="https://arxiv.org/pdf/2211.11439.pdf">arXiv</a> /
+            <a href="https://ieeexplore.ieee.org/abstract/document/10160506">paper</a> /
             <a href="https://github.com/rover-xingyu/PROCA">code</a> /
             <a href="https://www.youtube.com/watch?v=W_tol4aHIQk">video</a> /
             <a href="https://fanegg.github.io/PROCA/PROCA_poster.pdf">poster</a>
@@ -411,7 +411,7 @@
             <p></p>
             <p>
               We recover NeRF from tourism images with variable appearance and occlusions, 
-              consistently rendering free-occlusion views with hallucinated appearances.
+              and consistently render free-occlusion views with hallucinated appearances.
             </p>
           </td>
         </tr>
@@ -455,7 +455,7 @@
             <p></p>
             <p>
               Instead of detecting objects in all frames, 
-              we detect only keyframes and embed an efficient prediction mechanism in all incoming frames.  
+              we detect only keyframes and embed an efficient prediction mechanism in other frames to find dynamic objects.  
             </p>
           </td>
         </tr>     
@@ -538,7 +538,7 @@
             <br>
             <strong>IEEE Intelligent Transportation Systems Institute Lead Award</strong>
             <br>
-            Second Place for Navigating in GPS-denied Environments, Intelligent Vehicle Future Challenge, 2019
+            2nd Place for Navigating in GPS-denied Environments, Intelligent Vehicle Future Challenge, 2019
             <br>
             <p></p>
             <p>Lidar Odometry, Mapping, and Localization.</p>
@@ -580,9 +580,8 @@
             National Second Prize, The 11th Chinese College Students Computer Design Contest, 2018
             <br>
             <p></p>
-            <p>Sensor fusion of IMU and BLE for localization.
-            <br>Hand gesture recognition based on computer vision.
-            <br>Robot hand controller based on potentiometer.
+            <p>Hand gesture recognition, sensor fusion of IMU and BLE for localization.
+            <br>Potentiometer-based robotic hand controller design.
             </p>
           </td>
         </tr>  
@@ -634,6 +633,38 @@
             <heading>Invited Talks</heading>
           </td>
         </tr>
+        <!-- infer_talk -->
+        <tr onmouseout="infer_talk_stop()" onmouseover="infer_talk_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id='infer_talk_image'><video  width=100% height=100% muted autoplay loop>
+              <img src='img/talk_inferring.png' width="160">
+              Your browser does not support the video tag.
+              </video></div>
+              <img src='img/talk_inferring.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function infer_talk_start() {
+                document.getElementById('infer_talk_image').style.opacity = "1";
+              }
+
+              function infer_talk_stop() {
+                document.getElementById('infer_talk_image').style.opacity = "0";
+              }
+              infer_talk_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://rover-xingyu.github.io/">
+              <papertitle>Inferring the physical world and camera poses from images</papertitle>
+            </a>
+            <br>
+            <strong>ETH Zurich</strong>, 2023
+            <br>
+            <p>Sharing the intuition of dealing with dynamic objects in our previous work and give a prospect of handling the tracking problem via neural fields.
+            </p>
+          </td>
+        </tr> 
         <!-- HaNeRF_talk -->
         <tr onmouseout="HaNeRF_talk_stop()" onmouseover="HaNeRF_talk_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
@@ -657,16 +688,14 @@
           </td>
           <td style="padding:20px;width:75%;vertical-align:middle">
             <a href="https://www.shenlanxueyuan.com/open/course/155">
-              <papertitle>光影幻象：神经辐射场中的时空流转</papertitle>
+              <papertitle>光影幻象：神经辐射场中的时空流转 
+              <br> Neural Radiance Fields for Unconstrained Photo Collections </papertitle>
             </a>
             <br>
-            <strong>Xingyu Chen</strong>
+            <strong>深蓝学院 (Shenlan College online education)</strong>, 2022
             <br>
-            <em>Shenlan College online education</em>, 2022
-            <br>
-            <p></p>
             <p>Introduction about Neural Radiance Fields (NeRF) for unconstrained photo collections.
-            <br>Including <a href="https://www.matthewtancik.com/nerf">NeRF</a>, <a href="https://nerf-w.github.io/">NeRF in the Wild</a>, and <a href="https://rover-xingyu.github.io/Ha-NeRF/">Ha-NeRF</a> 
+            Including <a href="https://www.matthewtancik.com/nerf">NeRF</a>, <a href="https://nerf-w.github.io/">NeRF in the Wild</a>, and <a href="https://rover-xingyu.github.io/Ha-NeRF/">Ha-NeRF</a> 
             </p>
           </td>
         </tr> 
@@ -678,7 +707,8 @@
           <td>
             <heading>Academic Services</heading>
               <ul>
-                <li><strong>Conference Reviewer</strong>: CVPR, ICCV, NeurIPS, ICLR
+                <li><strong>Reviewer of Computer Vision Conferences: </strong>CVPR, ICCV</li>
+                <li><strong>Reviewer of Machine Learning Conferences: </strong>NeurIPS, ICLR, ICML </li>
               </ul>
           </td>
         </tr>
