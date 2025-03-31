@@ -105,10 +105,10 @@
           supervised by <a style="font-size: inherit;" href="https://apchenstu.github.io/">Anpei Chen</a> and <a style="font-size: inherit;" href="https://www.cvlibs.net/">Andreas Geiger</a>.
         </p>
 
-        <!-- <p style="font-size: 17px;">I am fortunate to work with <a style="font-size: inherit;" href="https://xiuyuliang.cn/">Yuliang Xiu</a> at Endless AI Lab 
+        <p style="font-size: 17px;">I am fortunate to work with <a style="font-size: inherit;" href="https://xiuyuliang.cn/">Yuliang Xiu</a> at Endless AI Lab 
           and interned at <a style="font-size: inherit;" href="https://ailab.tencent.com/ailab/en/index/">Tencent AI Lab</a>, collaborating with <a style="font-size: inherit;" href="https://xuanwangvc.github.io/">Xuan Wang</a> and <a style="font-size: inherit;" href="https://qzhang-cv.github.io/">Qi Zhang</a>. 
           I got my M.S. from <a style="font-size: inherit;" href="http://en.xjtu.edu.cn">Xi'an Jiaotong University</a> and my B.S. from <a style="font-size: inherit;" href="http://english.cqu.edu.cn/">Chongqing University</a>.
-        </p> -->
+        </p>
         <p style="font-size: 17px;">
           My research topics include computer vision, machine learning, and computer graphics, specifically in spatial intelligence.
         </p>
@@ -177,7 +177,49 @@
       </tr>
       </table>
 
+      <table width="105%" align="center" border="0" cellspacing="0" cellpadding="20" >
+        <tr onmouseout="easi3_stop()" onmouseover="easi3_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id='easi3_image'><video  width=100% height=100% muted autoplay loop>
+              <source src="img/Easi3R.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div>
+              <img src='img/Easi3R.jpg' width="160">
+            </div>
+            <script type="text/javascript">
+              function easi3_start() {
+                document.getElementById('easi3_image').style.opacity = "1";
+              }
 
+              function easi3_stop() {
+                document.getElementById('easi3_image').style.opacity = "0";
+              }
+              easi3_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://easi3r.github.io/">
+              <papertitle>Easi3R: Estimating Disentangled Motion from DUSt3R Without Training</papertitle>
+            </a>
+            <br>
+            <strong>Xingyu Chen</strong>,
+            <a href="https://fanegg.github.io/">Yue Chen</a>,
+            <a href="https://xiuyuliang.cn/">Yuliang Xiu</a>,
+            <a href="https://www.cvlibs.net/">Andreas Geiger</a>,
+            <a href="https://apchenstu.github.io/">Anpei Chen</a>
+            <br >
+            Arxiv, 2025
+            <br>
+            <a href="https://easi3r.github.io/">project page</a> /
+            <!-- <a href="https://arxiv.org/abs/2412.09606">arXiv</a> / -->
+            <a href="https://github.com/Inception3D/Easi3R">code</a> /
+            <a href="https://easi3r.github.io/interactive.html">interactive demo</a>
+            <p></p>
+            <p>A simple training-free approach adapting DUSt3R for dynamic scenes.</p>
+              
+          </td>
+        </tr> 
 
       <table width="105%" align="center" border="0" cellspacing="0" cellpadding="20" >
         <tr onmouseout="feat2gs_stop()" onmouseover="feat2gs_start()">
@@ -325,7 +367,7 @@
             </td>
           </tr> 
       
-        <!-- <tr onmouseout="PROCA_stop()" onmouseover="PROCA_start()">
+        <tr onmouseout="PROCA_stop()" onmouseover="PROCA_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <div class="two" id='PROCA_image'>
@@ -365,9 +407,9 @@
               We decompose the image representation into place, appearance, and occlusion code and use the place code as a descriptor to retrieve images.
             </p>
           </td>
-        </tr> -->
+        </tr>
     
-        <!-- <tr onmouseout="bpnpl_stop()" onmouseover="bpnpl_start()">
+        <tr onmouseout="bpnpl_stop()" onmouseover="bpnpl_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <div class="two" id='bpnpl_image'><video  width=100% height=100% muted autoplay loop>
@@ -405,7 +447,7 @@
               Given a sparse semantic map (e.g., pole lines, traffic sign midpoints), we estimate camera poses by learning 2D-3D point-line correspondences.
             </p>
           </td>
-        </tr>  -->
+        </tr> 
     
         <tr onmouseout="hanerf_stop()" onmouseover="hanerf_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
@@ -458,7 +500,7 @@
         </tr>
 
         <!-- rdsslam -->
-        <!-- <tr onmouseout="rds_stop()" onmouseover="rds_start()">
+        <tr onmouseout="rds_stop()" onmouseover="rds_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <div class="two" id='rds_image'><video  width=100% height=100% muted autoplay loop>
@@ -499,10 +541,10 @@
               we detect only keyframes and embed an efficient prediction mechanism in other frames to find dynamic objects.  
             </p>
           </td>
-        </tr>      -->
+        </tr>     
 
         <!-- NCM -->
-        <!-- <tr onmouseout="NCM_stop()" onmouseover="NCM_start()">
+        <tr onmouseout="NCM_stop()" onmouseover="NCM_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <div class="two" id='NCM_image'><video  width=100% height=100% muted autoplay loop>
@@ -542,11 +584,11 @@
             <p>We propose a navigation command matching model to discriminate actions generated from sub-optimal policies via smooth rewards.</p>
           </td>
         </tr>
-      </table> -->
+      </table>
 
 
 
-<!--       
+      
     <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
       <tr>
         <td width="100%" valign="middle">
@@ -647,7 +689,7 @@
           </td>
         </tr>
       </table>
-       -->
+      
 
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
         <br>
@@ -735,6 +777,7 @@
               <ul>
                 <li>Reviewer of Computer Vision Conferences: CVPR, ICCV, ECCV, 3DV</li>
                 <li>Reviewer of Machine Learning Conferences: NeurIPS, ICLR, ICML</li>
+                <li>Reviewer of Robotics Conferences: IROS</li>
               </ul>
           </td>
         </tr>
