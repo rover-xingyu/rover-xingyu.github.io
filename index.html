@@ -97,7 +97,7 @@
     <td>
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
       <!--<tr onmouseout="headshot_stop()" onmouseover="headshot_start()">-->
-      <tr>
+        <tr onmouseout="avatar_stop()" onmouseover="avatar_start()">
         <td width="67%" valign="middle">
         <p align="center">
           <name>Xingyu Chen (陈星宇)</name>
@@ -123,9 +123,31 @@
 
         </p>
         </td>
-        <td width="33%">
+        <!-- <td width="33%">
           <img src="img/me3.jpg" width="250" alt="headshot">
+        </td> -->
+
+        <td width="33%">
+          <a href="img/me4o.png">
+            <div class="one" style="width:250; height:auto; position:relative;">
+              <div class="two" id='avatar_image' style="width:250; height:auto; position:absolute; top:0; left:0;">
+                <img src="img/me4o.png" width="250" alt="alternative headshot" style="border-radius: 0%; aspect-ratio: 1/1; object-fit: cover;">
+              </div>
+              <img src='img/me3.jpg' width="250" alt="headshot" style="border-radius: 0%; aspect-ratio: 1/1; object-fit: cover;">
+            </div>
+          </a>
+          <script type="text/javascript">
+            function avatar_start() {
+              document.getElementById('avatar_image').style.opacity = "1";
+            }
+
+            function avatar_stop() {
+              document.getElementById('avatar_image').style.opacity = "0";
+            }
+            avatar_stop()
+          </script>
         </td>
+
       </tr>
       </table>
 
