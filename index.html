@@ -242,24 +242,70 @@
       </table>
 
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
-        <tr onmouseout="easi3_stop()" onmouseover="easi3_start()">
+        <tr onmouseout="ttt3r_stop()" onmouseover="ttt3r_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
-              <div class="two" id='easi3_image'><video  width=100% height=100% muted autoplay loop>
+              <div class="two" id='ttt3r_image'><video  width=100% height=100% muted autoplay loop>
+              <source src="img/ttt3r.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div>
+              <img src='img/ttt3r.jpg' width="160">
+            </div>
+            <script type="text/javascript">
+              function ttt3r_start() {
+                document.getElementById('ttt3r_image').style.opacity = "1";
+              }
+
+              function ttt3r_stop() {
+                document.getElementById('ttt3r_image').style.opacity = "0";
+              }
+              ttt3r_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://rover-xingyu.github.io/TTT3R">
+              <img src="img/ttt3r_icon.png" style="height:20px; vertical-align:bottom; margin-right:0px;">
+              <papertitle>TTT3R: 3D Reconstruction as Test-Time Training</papertitle>
+            </a>
+            <br>
+            <strong>Xingyu Chen</strong>,
+            <a href="https://fanegg.github.io/">Yue Chen</a>,
+            <a href="https://xiuyuliang.cn/">Yuliang Xiu</a>,
+            <a href="https://www.cvlibs.net/">Andreas Geiger</a>,
+            <a href="https://apchenstu.github.io/">Anpei Chen†</a>
+            <br >
+            arXiv, 2025
+            <br>
+            <a href="https://rover-xingyu.github.io/TTT3R">project page</a> /
+            <a href="https://arxiv.org/abs/2510.11111">arXiv</a> /
+            <a href="https://github.com/Inception3D/TTT3R">code</a>
+            <p></p>
+            <p>
+              A simple state update rule to enhance length generalization for CUT3R.
+            </p>
+              
+          </td>
+        </tr> 
+
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
+        <tr onmouseout="easi3r_stop()" onmouseover="easi3r_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id='easi3r_image'><video  width=100% height=100% muted autoplay loop>
               <source src="img/Easi3R.mp4" type="video/mp4">
               Your browser does not support the video tag.
               </video></div>
               <img src='img/Easi3R.jpg' width="160">
             </div>
             <script type="text/javascript">
-              function easi3_start() {
-                document.getElementById('easi3_image').style.opacity = "1";
+              function easi3r_start() {
+                document.getElementById('easi3r_image').style.opacity = "1";
               }
 
-              function easi3_stop() {
-                document.getElementById('easi3_image').style.opacity = "0";
+              function easi3r_stop() {
+                document.getElementById('easi3r_image').style.opacity = "0";
               }
-              easi3_stop()
+              easi3r_stop()
             </script>
           </td>
           <td style="padding:20px;width:75%;vertical-align:middle">
