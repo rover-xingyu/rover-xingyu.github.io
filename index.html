@@ -242,6 +242,54 @@
       </table>
 
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
+        <tr onmouseout="human3r_stop()" onmouseover="human3r_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <div class="two" id='human3r_image'><video width=100% height=100%  muted autoplay loop>
+              <source src="img/human3r.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div>
+              <img src='img/human3r.jpg' width="160">
+            </div>
+            <script type="text/javascript">
+              function human3r_start() {
+                document.getElementById('human3r_image').style.opacity = "1";
+              }
+
+              function human3r_stop() {
+                document.getElementById('human3r_image').style.opacity = "0";
+              }
+              human3r_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://fanegg.github.io/Human3R/">
+              <img src="img/human3r_icon.png" style="height:20px; vertical-align:bottom; margin-right:0px;">
+              <papertitle>Human3R: Everyone Everywhere All at Once</papertitle>
+            </a>
+            <br>
+            <a href="https://fanegg.github.io/">Yue Chen</a>,
+            <strong>Xingyu Chen⚑</strong>,
+            <a href="https://yuxuan-xue.com/">Yuxuan Xue</a>,
+            <a href="https://apchenstu.github.io/">Anpei Chen</a>,
+            <a href="https://xiuyuliang.cn/">Yuliang Xiu†</a>,
+            <a href="https://virtualhumans.mpi-inf.mpg.de/">Gerard Pons-Moll</a>
+            <br >
+            arXiv, 2025
+            <br>
+            <a href="https://fanegg.github.io/Human3R/">project page</a> /
+            <a href="https://arxiv.org/abs/2510.xxxxx">arXiv</a> /
+            <a href="https://github.com/fanegg/Human3R">code</a> /
+            <a href="https://fanegg.github.io/Human3R/interactive.html">interactive demo</a>
+            <p></p>
+            <p>
+              Online human-scene reconstruction in One model, One stage.
+            </p>
+              
+          </td>
+        </tr> 
+
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
         <tr onmouseout="ttt3r_stop()" onmouseover="ttt3r_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
