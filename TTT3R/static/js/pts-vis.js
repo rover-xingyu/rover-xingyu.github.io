@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="video-container" style="width: 100%; max-width: none;">
                         <div class="video-display-container" style="display: flex; justify-content: center; width: 100%;">
                             <div id="video-container" style="width: 95%; position: relative; background-color: white; aspect-ratio: 16/9;">
-                                <video id="main-video" controls autoplay muted loop playsinline disablePictureInPicture style="width: 100%; height: 100%; object-fit: contain;">
+                                <video id="main-video" controls autoplay muted loop playsinline disablePictureInPicture style="width: 100%; height: 100%; object-fit: contain; background-color: white;">
                                     <source id="main-video-source" type="video/mp4">
                                 </video>
                                 <div id="video-placeholder" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: white; display: none; align-items: center; justify-content: center; color: #666; font-size: 16px;">
@@ -150,12 +150,19 @@ document.addEventListener('DOMContentLoaded', () => {
             
             mainVideoElement.pause();
             
+            mainVideoElement.style.opacity = '0';
+            
             mainVideoSource.src = thumbnail.dataset.video;
             mainVideoElement.load();
             
-            new Promise(resolve => mainVideoElement.addEventListener('loadeddata', resolve, { once: true }))
-            .then(() => {
-                videoPlaceholder.style.display = 'none';
+            Promise.all([
+                new Promise(resolve => mainVideoElement.addEventListener('loadeddata', resolve, { once: true })),
+                new Promise(resolve => mainVideoElement.addEventListener('canplay', resolve, { once: true }))
+            ]).then(() => {
+                setTimeout(() => {
+                    videoPlaceholder.style.display = 'none';
+                    mainVideoElement.style.opacity = '1';
+                }, 50);
                 
                 mainVideoElement.loop = true;
                 
