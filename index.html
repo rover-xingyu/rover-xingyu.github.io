@@ -241,6 +241,103 @@
       </tr>
       </table>
 
+
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
+        <tr onmouseout="motion3to4_stop()" onmouseover="motion3to4_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one" style="display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <div class="two" id='motion3to4_image' style="top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;"><video style="width:100%;height:100%;object-fit:contain;" muted autoplay loop>
+                <source src="img/motion3to4.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div>
+              <img src='img/motion3to4.jpg' width="160">
+            </div>
+            <script type="text/javascript">
+              function motion3to4_start() {
+                document.getElementById('motion3to4_image').style.opacity = "1";
+              }
+
+              function motion3to4_stop() {
+                document.getElementById('motion3to4_image').style.opacity = "0";
+              }
+              motion3to4_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://motion3-to-4.github.io/">
+              <papertitle>Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis</papertitle>
+            </a>
+            <br>
+            <a href="https://hyuanchen.github.io/">Hongyuan Chen</a>,
+            <strong>Xingyu Chen</strong>,
+            <a href="https://youjiazhang.github.io/">Youjia Zhang</a>,
+            <a href="https://zexiangxu.github.io/">Zexiang Xu</a>,
+            <a href="https://apchenstu.github.io/">Anpei Chen†</a>,
+            <br >
+            arXiv, 2026
+            <br>
+            <a href="https://motion3-to-4.github.io/">project page</a> /
+            <a href="https://arxiv.org/abs/2601.14253">arXiv</a> /
+            <a href="https://github.com/Inception3D/Motion324">code</a>
+            <!-- <p></p> -->
+            <p>
+            <!-- <br> -->
+              Synthesising 4D dynamic objects from single monocular video
+            <!-- <br> -->
+            </p>
+              
+          </td>
+        </tr> 
+
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
+          <tr onmouseout="ttt3r_stop()" onmouseover="ttt3r_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                <div class="two" id='ttt3r_image' style="top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;"><video style="width:100%;height:100%;object-fit:contain;" muted autoplay loop>
+                <source src="img/ttt3r.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='img/ttt3r.jpg' width="160">
+              </div>
+              <script type="text/javascript">
+                function ttt3r_start() {
+                  document.getElementById('ttt3r_image').style.opacity = "1";
+                }
+  
+                function ttt3r_stop() {
+                  document.getElementById('ttt3r_image').style.opacity = "0";
+                }
+                ttt3r_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://rover-xingyu.github.io/TTT3R">
+                <img src="img/ttt3r_icon.png" style="height:20px; vertical-align:bottom; margin-right:0px;">
+                <papertitle>TTT3R: 3D Reconstruction as Test-Time Training</papertitle>
+              </a>
+              <br>
+              <strong>Xingyu Chen</strong>,
+              <a href="https://fanegg.github.io/">Yue Chen</a>,
+              <a href="https://xiuyuliang.cn/">Yuliang Xiu</a>,
+              <a href="https://www.cvlibs.net/">Andreas Geiger</a>,
+              <a href="https://apchenstu.github.io/">Anpei Chen†</a>
+              <br >
+              International Conference on Learning Representations (<strong>ICLR</strong>), 2026
+              <br>
+              <a href="https://rover-xingyu.github.io/TTT3R">project page</a> /
+              <a href="https://arxiv.org/abs/2509.26645">arXiv</a> /
+              <a href="https://github.com/Inception3D/TTT3R">code</a>
+              <p></p>
+              <p>
+                A simple state update rule to enhance length generalization for CUT3R.
+              </p>
+                
+            </td>
+          </tr> 
+
+
+
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
         <tr onmouseout="human3r_stop()" onmouseover="human3r_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
@@ -269,13 +366,13 @@
             </a>
             <br>
             <a href="https://fanegg.github.io/">Yue Chen</a>,
-            <strong>Xingyu Chen⚑</strong>,
+            <strong>Xingyu Chen</strong>,
             <a href="https://yuxuan-xue.com/">Yuxuan Xue</a>,
             <a href="https://apchenstu.github.io/">Anpei Chen</a>,
             <a href="https://xiuyuliang.cn/">Yuliang Xiu†</a>,
             <a href="https://virtualhumans.mpi-inf.mpg.de/">Gerard Pons-Moll</a>
             <br >
-            arXiv, 2025
+            International Conference on Learning Representations (<strong>ICLR</strong>), 2026
             <br>
             <a href="https://fanegg.github.io/Human3R/">project page</a> /
             <a href="https://arxiv.org/abs/2510.06219">arXiv</a> /
@@ -289,51 +386,7 @@
           </td>
         </tr> 
 
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
-        <tr onmouseout="ttt3r_stop()" onmouseover="ttt3r_start()">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='ttt3r_image'><video width=100% height=100% style="object-fit:fill;" muted autoplay loop>
-              <source src="img/ttt3r.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-              </video></div>
-              <img src='img/ttt3r.jpg' width="160">
-            </div>
-            <script type="text/javascript">
-              function ttt3r_start() {
-                document.getElementById('ttt3r_image').style.opacity = "1";
-              }
 
-              function ttt3r_stop() {
-                document.getElementById('ttt3r_image').style.opacity = "0";
-              }
-              ttt3r_stop()
-            </script>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <a href="https://rover-xingyu.github.io/TTT3R">
-              <img src="img/ttt3r_icon.png" style="height:20px; vertical-align:bottom; margin-right:0px;">
-              <papertitle>TTT3R: 3D Reconstruction as Test-Time Training</papertitle>
-            </a>
-            <br>
-            <strong>Xingyu Chen</strong>,
-            <a href="https://fanegg.github.io/">Yue Chen</a>,
-            <a href="https://xiuyuliang.cn/">Yuliang Xiu</a>,
-            <a href="https://www.cvlibs.net/">Andreas Geiger</a>,
-            <a href="https://apchenstu.github.io/">Anpei Chen†</a>
-            <br >
-            arXiv, 2025
-            <br>
-            <a href="https://rover-xingyu.github.io/TTT3R">project page</a> /
-            <a href="https://arxiv.org/abs/2509.26645">arXiv</a> /
-            <a href="https://github.com/Inception3D/TTT3R">code</a>
-            <p></p>
-            <p>
-              A simple state update rule to enhance length generalization for CUT3R.
-            </p>
-              
-          </td>
-        </tr> 
 
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
         <tr onmouseout="easi3r_stop()" onmouseover="easi3r_start()">
@@ -872,14 +925,48 @@
           </td>
         </tr>
       </table>
-        <!-- infer_talk -->
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <!-- 3dfm_talk -->
+        <tr onmouseout="talk_3dfm_stop()" onmouseover="talk_3dfm_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle;padding-top: 0;">
+            <div class="one"style="display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <div class="two" id='talk_3dfm_image' style="top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;"><video style="width:100%;height:100%;object-fit:contain;" muted autoplay loop>
+                <img src='img/3dfm_talk.png' width="160">
+              </div>
+              <img src='img/3dfm_talk.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function talk_3dfm_start() {
+                document.getElementById('talk_3dfm_image').style.opacity = "1";
+              }
+
+              function talk_3dfm_stop() {
+                document.getElementById('talk_3dfm_image').style.opacity = "0";
+              }
+              talk_3dfm_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://rover-xingyu.github.io/">
+              <papertitle>三维基础模型的秘密
+              <br> Secrets Behind 3D Foundation Models </papertitle>
+            </a>
+            <br>
+            <strong>Huawei Noah's Ark Lab (Toronto)</strong>, 2025
+            <br>
+            <strong>Tsinghua University</strong>, 2025
+            <br>
+            <p>Unveiling the internal mechanisms and emergent spatial intelligence of 3D foundation models, 
+              Including <a href="https://easi3r.github.io/">Easi3R</a>, <a href="https://rover-xingyu.github.io/TTT3R/">TTT3R</a>, and <a href="https://fanegg.github.io/Human3R/">Human3R</a>.
+            </p>
+          </td>
+        </tr>
+        <!-- infer_talk -->
         <tr onmouseout="infer_talk_stop()" onmouseover="infer_talk_start()">
           <td style="padding:20px;width:25%;vertical-align:middle;padding-top: 0;">
             <div class="one">
-              <div class="two" id='infer_talk_image'>
-                <video width="100%" height="100%" muted autoplay loop>
-                  <source src="img/talk_inferring.mp4" type="video/mp4">
+              <div class="two" id='infer_talk_image'><video  width=100% height=100% muted autoplay loop>
+                  <img src='img/talk_inferring.png' width="160">
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -937,7 +1024,7 @@
             <strong>深蓝学院 (Shenlan College online education)</strong>, 2022
             <br>
             <p>Introduction about Neural Radiance Fields (NeRF) for unconstrained photo collections.
-            Including <a href="https://www.matthewtancik.com/nerf">NeRF</a>, <a href="https://nerf-w.github.io/">NeRF in the Wild</a>, and <a href="https://rover-xingyu.github.io/Ha-NeRF/">Ha-NeRF</a> 
+            Including <a href="https://www.matthewtancik.com/nerf">NeRF</a>, <a href="https://nerf-w.github.io/">NeRF in the Wild</a>, and <a href="https://rover-xingyu.github.io/Ha-NeRF/">Ha-NeRF</a>.
             </p>
           </td>
         </tr> 
@@ -950,11 +1037,12 @@
           <td>
             <heading>Academic Services</heading>
               <ul style="font-size: 17px;">
-                <li><strong style="font-size: 17px;">Conference Reviewer</strong>
+                <li><strong style="font-size: 17px;">Outstanding Reviewer</strong>
                   <ul style="margin-top: 10px;">
                     <li>Computer Vision: CVPR, ICCV, ECCV, 3DV</li>
                     <li>Machine Learning: NeurIPS, ICLR, ICML</li>
                     <li>Robotics: IROS</li>
+                    <li>Graphics: SIGGRAPH</li>
                   </ul>
                 </li>
               </ul>
