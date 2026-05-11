@@ -82,7 +82,21 @@
        -webkit-transition: opacity .2s ease-in-out;
       }
       span.highlight {
-          background-color: #ffffd0;
+          color: #e28353;
+          background-color: transparent;
+          font-weight: 500;
+          white-space: nowrap;
+      }
+      tr.paper-highlight td {
+          background-color: #ffffff;
+          border-top: 1px solid #f4d6c6;
+          border-bottom: 1px solid #f4d6c6;
+      }
+      tr.paper-highlight td:first-child {
+          border-left: 3px solid #e28353;
+      }
+      tr.paper-highlight td:last-child {
+          border-right: 1px solid #f4d6c6;
       }
     </style>
     <link rel="icon" type="image/png" href="img/star.png">
@@ -117,7 +131,7 @@
           I got my M.S. from <a style="font-size: inherit;" href="http://en.xjtu.edu.cn">Xi'an Jiaotong University</a> and my B.S. from <a style="font-size: inherit;" href="http://english.cqu.edu.cn/">Chongqing University</a>.
         </p>
         <p style="font-size: 17px;">
-          My research topics include computer vision, machine learning, and computer graphics, specifically in spatial intelligence.
+          I work on <span class="highlight">spatial intelligence</span> across computer vision, machine learning, computer graphics, and robotics.
         </p>
 
         <p align=center>
@@ -241,57 +255,8 @@
       </tr>
       </table>
 
-
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
-        <tr onmouseout="motion3to4_stop()" onmouseover="motion3to4_start()">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one" style="display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <div class="two" id='motion3to4_image' style="top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;"><video style="width:100%;height:100%;object-fit:contain;" muted autoplay loop>
-                <source src="img/motion3to4.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-              </video></div>
-              <img src='img/motion3to4.jpg' width="160">
-            </div>
-            <script type="text/javascript">
-              function motion3to4_start() {
-                document.getElementById('motion3to4_image').style.opacity = "1";
-              }
-
-              function motion3to4_stop() {
-                document.getElementById('motion3to4_image').style.opacity = "0";
-              }
-              motion3to4_stop()
-            </script>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <a href="https://motion3-to-4.github.io/">
-              <papertitle>Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis</papertitle>
-            </a>
-            <br>
-            <a href="https://hyuanchen.github.io/">Hongyuan Chen</a>,
-            <strong>Xingyu Chen</strong>,
-            <a href="https://youjiazhang.github.io/">Youjia Zhang</a>,
-            <a href="https://zexiangxu.github.io/">Zexiang Xu</a>,
-            <a href="https://apchenstu.github.io/">Anpei Chen†</a>,
-            <br >
-            IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026
-            <br>
-            <a href="https://motion3-to-4.github.io/">project page</a> /
-            <a href="https://arxiv.org/abs/2601.14253">arXiv</a> /
-            <a href="https://github.com/Inception3D/Motion324">code</a>
-            <!-- <p></p> -->
-            <p>
-            <!-- <br> -->
-              Synthesising 4D dynamic objects from single monocular video.
-            <!-- <br> -->
-            </p>
-              
-          </td>
-        </tr> 
-
-
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
-          <tr onmouseout="ttt3r_stop()" onmouseover="ttt3r_start()">
+          <tr class="paper-highlight" onmouseout="ttt3r_stop()" onmouseover="ttt3r_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one" style="display:flex;align-items:center;justify-content:center;overflow:hidden;">
                 <div class="two" id='ttt3r_image' style="top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;"><video style="width:100%;height:100%;object-fit:contain;" muted autoplay loop>
@@ -325,6 +290,8 @@
               <br >
               International Conference on Learning Representations (<strong>ICLR</strong>), 2026
               <br>
+              <span class="highlight">China3DV 2026 Top 5 Paper</span>
+              <br>
               <a href="https://rover-xingyu.github.io/TTT3R">project page</a> /
               <a href="https://arxiv.org/abs/2509.26645">arXiv</a> /
               <a href="https://github.com/Inception3D/TTT3R">code</a>
@@ -339,7 +306,7 @@
 
 
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
-        <tr onmouseout="human3r_stop()" onmouseover="human3r_start()">
+        <tr class="paper-highlight" onmouseout="human3r_stop()" onmouseover="human3r_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <div class="two" id='human3r_image'><video width=100% height=100%  muted autoplay loop>
@@ -389,7 +356,7 @@
 
 
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" >
-        <tr onmouseout="easi3r_stop()" onmouseover="easi3r_start()">
+        <tr class="paper-highlight" onmouseout="easi3r_stop()" onmouseover="easi3r_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <div class="two" id='easi3r_image'><video  width=100% height=100% muted autoplay loop>
@@ -435,7 +402,7 @@
           </td>
         </tr> 
         
-        <tr onmouseout="feat2gs_stop()" onmouseover="feat2gs_start()">
+        <tr class="paper-highlight" onmouseout="feat2gs_stop()" onmouseover="feat2gs_start()">
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
               <div class="two" id='feat2gs_image'><video  width=100% height=100% muted autoplay loop>
@@ -476,6 +443,96 @@
             <a href="https://fanegg.github.io/feat2gs_gallery.html">gallery</a>
             <p></p>
             <p>A unified framework to probe "<i>texture and geometry awareness</i>" of visual foundation models. Novel view synthesis serves as an effective proxy for 3D evaluation.</p>
+              
+          </td>
+        </tr> 
+
+        <tr onmouseout="globalsplat_stop()" onmouseover="globalsplat_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one" style="display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <div class="two" id='globalsplat_image' style="top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;"><video style="width:100%;height:100%;object-fit:contain;" muted autoplay loop>
+                <source src="img/globalSplat.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div>
+              <img src='img/globalSplat.jpg' style="width:100%;height:100%;object-fit:contain;" alt="GlobalSplat">
+            </div>
+            <script type="text/javascript">
+              function globalsplat_start() {
+                document.getElementById('globalsplat_image').style.opacity = "1";
+              }
+
+              function globalsplat_stop() {
+                document.getElementById('globalsplat_image').style.opacity = "0";
+              }
+              globalsplat_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://r-itk.github.io/globalsplat/">
+              <papertitle>GlobalSplat: Efficient Feed-Forward 3D Gaussian Splatting via Global Scene Tokens</papertitle>
+            </a>
+            <br>
+            <a href="https://x.com/ItkRoni">Roni Itkin</a>,
+            <a href="https://www.linkedin.com/in/noam-issachar-659b751b7/">Noam Issachar</a>,
+            <a href="https://www.linkedin.com/in/ykeypur">Yehonatan Keypur</a>,
+            <strong>Xingyu Chen</strong>,
+            <a href="https://apchenstu.github.io/">Anpei Chen</a>,
+            <a href="https://sagiebenaim.github.io/">Sagie Benaim</a>
+            <br >
+            arXiv, 2026
+            <br>
+            <a href="https://r-itk.github.io/globalsplat/">project page</a> /
+            <a href="http://arxiv.org/abs/2604.15284">arXiv</a>
+            <p></p>
+            <p>
+              A global scene tokenizer that moves beyond pixel-wise redundant tokens.
+            </p>
+              
+          </td>
+        </tr> 
+
+        <tr onmouseout="motion3to4_stop()" onmouseover="motion3to4_start()">
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one" style="display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <div class="two" id='motion3to4_image' style="top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;"><video style="width:100%;height:100%;object-fit:contain;" muted autoplay loop>
+                <source src="img/motion3to4.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video></div>
+              <img src='img/motion3to4.jpg' width="160">
+            </div>
+            <script type="text/javascript">
+              function motion3to4_start() {
+                document.getElementById('motion3to4_image').style.opacity = "1";
+              }
+
+              function motion3to4_stop() {
+                document.getElementById('motion3to4_image').style.opacity = "0";
+              }
+              motion3to4_stop()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://motion3-to-4.github.io/">
+              <papertitle>Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis</papertitle>
+            </a>
+            <br>
+            <a href="https://hyuanchen.github.io/">Hongyuan Chen</a>,
+            <strong>Xingyu Chen</strong>,
+            <a href="https://youjiazhang.github.io/">Youjia Zhang</a>,
+            <a href="https://zexiangxu.github.io/">Zexiang Xu</a>,
+            <a href="https://apchenstu.github.io/">Anpei Chen†</a>,
+            <br >
+            IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2026
+            <br>
+            <a href="https://motion3-to-4.github.io/">project page</a> /
+            <a href="https://arxiv.org/abs/2601.14253">arXiv</a> /
+            <a href="https://github.com/Inception3D/Motion324">code</a>
+            <!-- <p></p> -->
+            <p>
+            <!-- <br> -->
+              Synthesising 4D dynamic objects from single monocular video.
+            <!-- <br> -->
+            </p>
               
           </td>
         </tr> 
@@ -1080,7 +1137,7 @@
               <ul style="font-size: 17px;">
                 <li><strong style="font-size: 17px;">Outstanding Reviewer</strong>
                   <ul style="margin-top: 10px;">
-                    <li>Computer Vision: CVPR, ICCV, ECCV, 3DV</li>
+                    <li>Computer Vision: CVPR, ICCV, ECCV, 3DV, TPAMI</li>
                     <li>Machine Learning: NeurIPS, ICLR, ICML</li>
                     <li>Robotics: IROS</li>
                     <li>Graphics: SIGGRAPH, TOG</li>
